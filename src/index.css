@@ -1,8 +1,9 @@
-@import "normalize.css"; /* bring in normalize.css styles */
+@import "normalize.css";
 
 :root {
   --main-font-family: Montserrat, sans-serif;
   --second-font-family: Antic, sans-serif;
+  --logo-font-family: 'Julius Sans One', sans-serif;
   --line-height: 1.2;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
