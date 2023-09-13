@@ -8,9 +8,11 @@
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
 
-  --primary-text-color: rgb(97, 97, 97);
-  --secondary-text-color: rgb(209, 209, 209);
+  --primary-text-color: rgb(19, 19, 19);
+  --secondary-text-color: rgb(97, 97, 97);  
+  --active-text-color: rgb(209, 209, 209);
   --background-color: rgb(245, 245, 245);
+  --background-color-transparent: rgba(146, 145, 145, 0.1);
 
   --transition-duration: 250ms;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -72,4 +74,17 @@ li {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.networks {
+  fill: var(--secondary-text-color);
+  width: 25px;
+  height: 25px;
+  
+  transition: transform var(--transition-duration) var(--timing-function);
+}
+
+.networks:hover,
+.networks:focus {
+  transform: scale(1.2);
 }

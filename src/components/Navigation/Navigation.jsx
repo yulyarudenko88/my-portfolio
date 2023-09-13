@@ -1,20 +1,19 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { GalleryItem, Thumb, Title } from './RecipeGalleryItem.styled';
+import { NavList, NavItem, StyledLink } from './Navigation.styled';
 
-// const MAX_TITLE_LENGTH = 25;
-const PAGES = ["About", "Portfolio", "Contact"];
+const PAGES = ['About', 'Portfolio', 'Contacts'];
 
 const Navigation = () => {
   return (
     <nav>
-      <ul>
-        {PAGES.map((page) => (
-          <li key={page}>{page}</li>
+      <NavList>
+        {PAGES.map(page => (
+          <NavItem key={page}>
+            <StyledLink to={page === 'About' ? '/' : `/${page.toLowerCase()}`}>
+              {page}
+            </StyledLink>
+          </NavItem>
         ))}
-      </ul>
-      {/* <Link to={`/recipes/${id}`}>
-      </Link>*/}
+      </NavList>
     </nav>
   );
 };

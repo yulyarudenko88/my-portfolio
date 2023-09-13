@@ -1,19 +1,24 @@
-import { Routes, Route } from "react-router-dom";
-import Portfolio from "./pages/Portfolio/Portfolio";
-import About from "./pages/About/About";
-import Contacts from "./pages/Contacts/Contacts";
+import { lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import SharedLayout from './components/SharedLayout/SharedLayout';
+
+const About = lazy(() => import('./pages/About/About'));
+const Portfolio = lazy(() => import('./pages/Portfolio/Portfolio'));
+const Contacts = lazy(() => import('./pages/Contacts/Contacts'));
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<About />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="*" element={<div>sorry</div>} />
-      </Routes>         
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<About />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="contacts" element={<Contacts />} />
+          <Route path="*" element={<div>sorry</div>} />
+        </Route>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
