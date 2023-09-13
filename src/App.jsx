@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import Portfolio from "./pages/Portfolio";
-import About from "./pages/About";
-import Contacts from "./pages/Contacts";
+import Portfolio from "./pages/Portfolio/Portfolio";
+import About from "./pages/About/About";
+import Contacts from "./pages/Contacts/Contacts";
 
 function App() {
   return (
