@@ -1,8 +1,10 @@
+import Filter from "../../components/Filter/Filter";
+
 const Portfolio = () => {
   return (
-    <div>
-      Portfolio
-    </div>
+    <section>
+      <Filter/>
+    </section>
   );
 };
 
