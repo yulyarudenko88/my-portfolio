@@ -8,13 +8,9 @@ export const Wrapper = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 450px;
+  width: 400px;
+  max-height: 480px;
   border-radius: 50%;
-`;
-
-export const ListItem = styled.li`
-  padding: 16px 0;
-  border-top: 1px solid var(--active-text-color);
 `;
 
 export const Title = styled.h2`
@@ -32,11 +28,51 @@ export const Info = styled.p`
   &:not(:last-child) {
     margin-bottom: 8px;
   }
+
+  span {
+    font-weight: 600;
+  }
 `;
 
 export const SkillsList = styled.ul`
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
-  gap:8px;
+  gap: 8px;
 `;
 
+export const SkillsListItem = styled.li`
+  padding: 8px;
+  background-color: var(--background-color-transparent);
+`;
+
+export const CertificateList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+`;
+
+export const CertificateListItem = styled.li`
+  padding: 12px;
+  background-color: var(--background-color-transparent);
+`;
+
+export const CertificateTitle = styled.h3`
+  font-size: 16px;
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+`;
+
+export const ImgWrap = styled.div`
+  padding: 0px 0px 58% 0px;
+  overflow: hidden;
+  position: relative;
+`;
+
+export const CertificateImg = styled.img`
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+`;

@@ -1,27 +1,47 @@
-import { Wrapper, Image, ListItem, Title, Info, SkillsList } from './About.styled';
-import MyPhoto from '../../assets/images/my-photo.jpg';
+import { motion } from 'framer-motion';
+import {
+  Wrapper,
+  Image,
+  Title,
+  Info,
+  SkillsList,
+  SkillsListItem,
+  CertificateList,
+  ImgWrap,
+  CertificateImg,
+  CertificateListItem,
+  CertificateTitle,
+} from './About.styled';
 
-const HARD_SKILLS = [
-  'HTML5 / CSS3 / SASS',
-  'Responsive / Adaptive design',
-  'JavaScript',
-  'REST API',
-  'Webpack',
-  'React',
-  'Node.js',
-  'Redux / ReduxToolkit',
-];
+import MyPhoto from '../../assets/images/my-photo.jpg';
+import GoItFullstackCertificate from '../../assets/images/goit-fullstack_certificate.png';
+import HARD_SKILLS from '../../data/hard-skills';
+import CERTIFICATES from '../../data/certificates';
+
+const InfoAnimation = {
+  hidden: {
+    y: 150,
+    opacity: 0,
+  },
+
+  visible: custom => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.3 },
+  }),
+};
 
 const About = () => {
   return (
     <Wrapper>
       <Image src={MyPhoto} alt="my photo" />
-      <ul>
-        <ListItem>
+      <motion.ul initial="hidden" whileInView='visible' viewport={{amount: 0.2, once: true,}}>
+        <motion.li variants={InfoAnimation} custom={1} className='about-list-item'>
           <Title>Info</Title>
           <Info>
-            Hello! I hope you are doing well. I am Junior Fullstack Developer
-            currently living and working in Kyiv, Ukraine.
+            Hello! I hope you are doing well. I am{' '}
+            <span>Junior Fullstack Developer</span> currently living and working
+            in Kyiv, Ukraine.
           </Info>
           <Info>
             How did I end up in IT? My entire professional life is connected
@@ -32,21 +52,34 @@ const About = () => {
             work. But time does not stand still and I found another field, study
             and work in which brings even more pleasure!
           </Info>
-        </ListItem>
-        <ListItem>
+        </motion.li>
+        <motion.li variants={InfoAnimation} custom={2} className='about-list-item'>
           <Title>Hard Skills</Title>
-          <SkillsList>{HARD_SKILLS.map(skill =>(<li key={skill.trim()}>{skill}</li>))}</SkillsList>
-        </ListItem>
-        <ListItem>
+          <SkillsList>
+            {HARD_SKILLS?.map(skill => (
+              <SkillsListItem key={skill.trim()}>{skill}</SkillsListItem>
+            ))}
+          </SkillsList>
+        </motion.li>
+        <motion.li variants={InfoAnimation} custom={3} className='about-list-item'>
           <Title>Certificates</Title>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas saepe
-            eos autem soluta officiis. A omnis fuga enim fugit illo quidem
-            doloremque mollitia! Dolor, eligendi suscipit dolores quo labore
-            iste!
-          </p>
-        </ListItem>
-      </ul>
+          <CertificateList>
+            {CERTIFICATES?.map(({ name, path }) => (
+              <CertificateListItem key={name.trim()}>
+                <ImgWrap>
+                  <CertificateTitle>{name}</CertificateTitle>
+                  <a href={path} target="_blank" rel="noopener noreferrer">
+                    <CertificateImg
+                      src={GoItFullstackCertificate}
+                      alt="fullstack certificate from GoIT"
+                    />
+                  </a>
+                </ImgWrap>
+              </CertificateListItem>
+            ))}
+          </CertificateList>
+        </motion.li>
+      </motion.ul>
     </Wrapper>
   );
 };
