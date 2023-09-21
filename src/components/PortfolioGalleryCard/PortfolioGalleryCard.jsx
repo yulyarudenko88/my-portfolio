@@ -1,7 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { ImGithub } from 'react-icons/im';
-import { IconContext } from 'react-icons';
-import { MdOpenInNew } from 'react-icons/md';
+import ProjectLinks from '../ProjectLinks/ProjectLinks';
 import PropTypes from 'prop-types';
 
 import {
@@ -9,8 +7,6 @@ import {
   Img,
   Options,
   Option,
-  LinksList,
-  LinkItem,
 } from './PortfolioGalleryCard.styled';
 
 const PortfolioGalleryCard = ({
@@ -24,7 +20,6 @@ const PortfolioGalleryCard = ({
   const location = useLocation();
 
   return (
-    <IconContext.Provider value={{ className: 'project-links' }}>
       <Card key={id}>
         <Link to={`${id}`} state={location}>
           <Img src={posterPath} alt={overview} />
@@ -36,31 +31,12 @@ const PortfolioGalleryCard = ({
             </li>
           ))}
         </Options>
-
-        <LinksList>
-          <LinkItem>
-            <a
-              href={githubPage}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              title="link to github"
-            >
-              <ImGithub />
-            </a>
-          </LinkItem>
-          <LinkItem>
-            <a
-              href={sitePath}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              title="link to website"
-            >
-              <MdOpenInNew />
-            </a>
-          </LinkItem>
-        </LinksList>
+        <ProjectLinks
+          sitePath={sitePath}
+          githubPage={githubPage}
+          position="absolute"
+        />
       </Card>
-    </IconContext.Provider>
   );
 };
 
