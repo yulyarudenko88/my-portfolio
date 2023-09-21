@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import PortfolioGalleryCard from '../PortfolioGalleryCard/PortfolioGalleryCard';
+import { Gallery } from './PortfolioGallery.styled';
 
-const PortfolioGallery = ({ projects }) => {
+import PROJECTS from '../../data/projects';
+
+const PortfolioGallery = () => {
   return (
-    <ul>
-      {projects?.map(({ id, poster_path, overview, options }) => {
+    <Gallery>
+      {PROJECTS?.map(({ id, poster_path, overview, options, site_path, github_page }) => {
         let posterPath = '';
 
         if (poster_path) {
@@ -21,10 +24,12 @@ const PortfolioGallery = ({ projects }) => {
             posterPath={posterPath}
             overview={overview}
             options={options}
+            sitePath={site_path}
+            githubPage={github_page}
           />
         );
       })}
-    </ul>
+    </Gallery>
   );
 };
 

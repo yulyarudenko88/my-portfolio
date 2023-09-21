@@ -5,7 +5,7 @@ const PROJECTS = [
     overview: 'My portfolio project',
     options: ['React', 'Node.js'],
     site_path: 'https://yulyarudenko88.github.io/my-portfolio/',
-    githab_page: 'https://github.com/yulyarudenko88/my-portfolio',
+    github_page: 'https://github.com/yulyarudenko88/my-portfolio',
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const PROJECTS = [
     overview: 'Smart Orange project',
     options: ['HTML5 / CSS3 / JS'],
     site_path: 'https://yulyarudenko88.github.io/Smart_Orange_Test/',
-    githab_page: 'https://github.com/yulyarudenko88/Smart_Orange_Test',
+    github_page: 'https://github.com/yulyarudenko88/Smart_Orange_Test',
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const PROJECTS = [
     overview: 'SoYummy project',
     options: ['React', 'Node.js'],
     site_path: 'https://serhii-vasylenko.github.io/goit-final-project/',
-    githab_page: 'https://github.com/yulyarudenko88/goit-final-project',
+    github_page: 'https://github.com/yulyarudenko88/goit-final-project',
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const PROJECTS = [
     overview: 'FoodSta project',
     options: ['HTML5 / CSS3 / JS'],
     site_path: 'https://mar1k85.github.io/monkey-business-team/',
-    githab_page: 'https://github.com/yulyarudenko88/FoodSta-team-project',
+    github_page: 'https://github.com/yulyarudenko88/FoodSta-team-project',
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const PROJECTS = [
     overview: 'Phonebook project',
     options: ['React'],
     site_path: 'https://yulyarudenko88.github.io/goit-react-hw-08-phonebook/',
-    githab_page: 'https://github.com/yulyarudenko88/goit-react-hw-08-phonebook',
+    github_page: 'https://github.com/yulyarudenko88/goit-react-hw-08-phonebook',
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const PROJECTS = [
     overview: 'Search movies project',
     options: ['React'],
     site_path: 'https://yulyarudenko88.github.io/goit-react-hw-05-movies/',
-    githab_page: 'https://github.com/yulyarudenko88/goit-react-hw-05-movies',
+    github_page: 'https://github.com/yulyarudenko88/goit-react-hw-05-movies',
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const PROJECTS = [
     overview: 'WebStudio project',
     options: ['HTML5 / CSS3 / JS'],
     site_path: 'https://yulyarudenko88.github.io/goit-markup-hw-08/',
-    githab_page: 'https://github.com/yulyarudenko88/goit-markup-hw-08',
+    github_page: 'https://github.com/yulyarudenko88/goit-markup-hw-08',
   },
 ];
 
