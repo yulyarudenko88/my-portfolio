@@ -15,16 +15,19 @@ export const Item = styled.li`
     content: '|';
   }
 
-  span {
+  button {
     display: inline-flex;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding: 0; 
+    border: 0 solid transparent;
+    background-color:transparent;
 
     font-family: var(--secondary-font-family);
     font-size: 16px;
     color: inherit;
     letter-spacing: 2px;
     text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
     transition: color var(--transition-duration) var(--timing-function);
 
     &:hover,

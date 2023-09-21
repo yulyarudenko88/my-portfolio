@@ -3,7 +3,7 @@ const PROJECTS = [
     id: 1,
     poster_path: '',
     overview: 'My portfolio project',
-    options: ['React', 'Node.js'],
+    options: ['React'],
     site_path: 'https://yulyarudenko88.github.io/my-portfolio/',
     github_page: 'https://github.com/yulyarudenko88/my-portfolio',
   },

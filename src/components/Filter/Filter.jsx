@@ -1,17 +1,29 @@
+import PropTypes from 'prop-types';
 import { List, Item } from './Filter.styled';
 
-const OPTIONS = ['HTML5 / CSS3 / JS', 'React', 'Node.js'];
-
-const Filter = () => {
+const Filter = ({ options, onFilterClick }) => {
   return (
     <List>
-      {OPTIONS.map(option => (
-        <Item key={option}>
-          <span>{option}</span>
+      {options.map(option => (
+        <Item key={option.trim()}>
+          <button
+            type="button"
+            onClick={() => {
+              onFilterClick(option);
+              // console.log(option);
+            }}
+          >
+            {option}
+          </button>
         </Item>
       ))}
     </List>
   );
+};
+
+Filter.propTypes = {
+  options: PropTypes.array,
+  onFilterClick: PropTypes.func,
 };
 
 export default Filter;

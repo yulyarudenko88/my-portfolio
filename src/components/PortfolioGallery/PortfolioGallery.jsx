@@ -2,39 +2,45 @@ import PropTypes from 'prop-types';
 import PortfolioGalleryCard from '../PortfolioGalleryCard/PortfolioGalleryCard';
 import { Gallery } from './PortfolioGallery.styled';
 
-import PROJECTS from '../../data/projects';
+const PortfolioGallery = ({ projects, selectedFilter }) => {
+  const filteredProjects =
+    selectedFilter === 'All'
+      ? projects
+      : projects.filter(project => project.options.includes(selectedFilter));
 
-const PortfolioGallery = () => {
   return (
     <Gallery>
-      {PROJECTS?.map(({ id, poster_path, overview, options, site_path, github_page }) => {
-        let posterPath = '';
+      {filteredProjects?.map(
+        ({ id, poster_path, overview, options, site_path, github_page }) => {
+          let posterPath = '';
 
-        if (poster_path) {
-          posterPath = `https://image.tmdb.org/t/p/w400/${poster_path}`;
-        } else {
-          posterPath =
-            'https://cdn.pixabay.com/photo/2012/04/18/23/29/film-38241_960_720.png';
+          if (poster_path) {
+            posterPath = `https://image.tmdb.org/t/p/w400/${poster_path}`;
+          } else {
+            posterPath =
+              'https://cdn.pixabay.com/photo/2012/04/18/23/29/film-38241_960_720.png';
+          }
+
+          return (
+            <PortfolioGalleryCard
+              key={id}
+              id={id}
+              posterPath={posterPath}
+              overview={overview}
+              options={options}
+              sitePath={site_path}
+              githubPage={github_page}
+            />
+          );
         }
-
-        return (
-          <PortfolioGalleryCard
-            key={id}
-            id={id}
-            posterPath={posterPath}
-            overview={overview}
-            options={options}
-            sitePath={site_path}
-            githubPage={github_page}
-          />
-        );
-      })}
+      )}
     </Gallery>
   );
 };
 
 PortfolioGallery.propTypes = {
   projects: PropTypes.array,
+  selectedFilter: PropTypes.string,
 };
 
 export default PortfolioGallery;
