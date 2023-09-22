@@ -1,12 +1,23 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
+import { BsBoxArrowLeft } from 'react-icons/bs';
 import ProjectLinks from '../../components/ProjectLinks/ProjectLinks';
 import Container from '../../components/Container/Container';
-import { Wrapper } from './ProjectDetails.styled';
+import {
+  Wrapper,
+  StyledLink,
+  Title,
+  Info,
+  SecondaryTitle,
+  SkillsList,
+  SkillsListItem,
+} from './ProjectDetails.styled';
 
 import PROJECT from '../../data/project';
 
 const ProjectDetails = () => {
   const { projectId } = useParams();
+  const location = useLocation();
+  const backLinkHref = location.state?.pathname ?? '/portfolio';
 
   const {
     title,
@@ -23,17 +34,30 @@ const ProjectDetails = () => {
   return (
     <Wrapper>
       <Container>
-        <h1>{`${title} ${projectId}`}</h1>
-        <p>{desc}</p>
-        {type === 'Team' && (
-          <p>{`It is a team project. I was a ${role} and ${completed}`}</p>
-        )}
-        <h2>Technology Stack</h2>
-        <ul style={{ marginTop: 'auto' }}>
+        <StyledLink to={backLinkHref}>
+          <BsBoxArrowLeft
+            style={{
+              width: '30px',
+              height: '30px',
+            }}
+          />
+        </StyledLink>
+        <Title>{`${title} ${projectId}`}</Title>
+        <div>
+          <Info>{desc}</Info>
+          {type === 'Team' && (
+            <Info>
+              It is a <span>team</span> project. I was a <span>{role}</span> and{' '}
+              <span>{completed}</span>
+            </Info>
+          )}
+        </div>
+        <SecondaryTitle>Technology Stack</SecondaryTitle>
+        <SkillsList>
           {technology_stack?.map(technology => (
-            <li key={technology}>{technology}</li>
+            <SkillsListItem key={technology}>{technology}</SkillsListItem>
           ))}
-        </ul>
+        </SkillsList>
         <ProjectLinks
           sitePath={site_path}
           githubPage={github_page}

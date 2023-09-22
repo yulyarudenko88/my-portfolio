@@ -22,7 +22,7 @@ export const LinkItem = styled.li`
   border: 1px solid transparent;
   border-radius: 50%;
   z-index: 5;
-  background-color: rgb(245, 245, 245, 0.8);
+  background-color: rgba(245, 245, 245, 0.8);
   transition: border-color var(--transition-duration) var(--timing-function);
   svg {
     transition: transform var(--transition-duration) var(--timing-function);

@@ -14,7 +14,6 @@
   --white-text-color:rgb(255, 255, 255);
   --background-color: rgb(245, 245, 245);
   --background-color-transparent: rgba(146, 145, 145, 0.1);
-  --overlay-background: rgba(146, 145, 145, 0.1);
 
   --transition-duration: 250ms;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -93,8 +92,8 @@ li {
 
 .project-links {
   fill: var(--secondary-text-color);
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .about-list-item {
