@@ -15,7 +15,6 @@ const ProjectLinks = ({
     bgColor: 'rgba(245, 245, 245, 0.8)',
     borderColor: 'rgb(97, 97, 97)',
   },
-
 }) => {
   return (
     <IconContext.Provider value={{ className: 'project-links' }}>
@@ -35,9 +34,12 @@ const ProjectLinks = ({
             <ImGithub />
           </a>
         </LinkItem>
-        <LinkItem key={sitePath} bgColor={bgColor}
+        <LinkItem
+          key={sitePath}
+          bgColor={bgColor}
           fill={fill}
-          hoverFocusParams={hoverFocusParams}>
+          hoverFocusParams={hoverFocusParams}
+        >
           <a
             href={sitePath}
             target="_blank"
