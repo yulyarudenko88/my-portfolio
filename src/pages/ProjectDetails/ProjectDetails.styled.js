@@ -5,21 +5,22 @@ export const StyledLink = styled(Link)`
   display: inline-block;
   margin-bottom: 16px;
   padding: 10px 20px;
+  border: 1px solid transparent;
   background-color: transparent;
-  transition: background-color var(--transition-duration) var(--timing-function);
+  transition: background-color var(--transition-duration) var(--timing-function),
+    border-color var(--transition-duration) var(--timing-function);
 
   &:hover,
   &:focus {
     background-color: rgba(245, 245, 245, 0.3);
+    border-color: rgba(245, 245, 245, 0.3);
   }
 `;
 
 export const Wrapper = styled.div`
   padding-top: 30px;
   padding-bottom: 50px;
-  /* padding-left: 16px; */
   padding-right: 40%;
-  /* height: 100vh; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,7 +31,7 @@ export const Wrapper = styled.div`
       rgba(47, 48, 58, 0.4)
     ),
     url('https://cdn.pixabay.com/photo/2012/04/18/23/29/film-38241_960_720.png');
-    color:var(--white-text-color);
+  color: var(--white-text-color);
 `;
 
 export const Title = styled.h1`

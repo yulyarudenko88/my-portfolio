@@ -62,6 +62,12 @@ const ProjectDetails = () => {
           sitePath={site_path}
           githubPage={github_page}
           position="static"
+          bgColor="transparent"
+          fill="rgb(255, 255, 255)"
+          hoverFocusParams={{
+            bgColor: 'rgba(245, 245, 245, 0.3)',
+            borderColor: 'rgba(245, 245, 245, 0.3)',
+          }}
         />
       </Container>
     </Wrapper>
