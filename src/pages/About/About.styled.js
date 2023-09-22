@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
 export const Image = styled.img`
   width: 400px;
   max-height: 480px;
-  border-radius: 50%;
 `;
 
 export const Title = styled.h2`
