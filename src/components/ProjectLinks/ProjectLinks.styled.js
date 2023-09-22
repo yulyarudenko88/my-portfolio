@@ -22,15 +22,19 @@ export const LinkItem = styled.li`
   border: 1px solid transparent;
   border-radius: 50%;
   z-index: 5;
-  background-color: rgba(245, 245, 245, 0.8);
-  transition: border-color var(--transition-duration) var(--timing-function);
+  background-color: ${({ bgColor }) => bgColor};
+  transition: border-color var(--transition-duration) var(--timing-function),
+    background-color var(--transition-duration) var(--timing-function);
   svg {
+    fill: ${({ fill }) => fill};
     transition: transform var(--transition-duration) var(--timing-function);
   }
 
   &:hover,
   &:focus {
-    border-color: var(--secondary-text-color);
+    background-color: ${props => props.hoverFocusParams?.bgColor};
+    border-color: ${props => props.hoverFocusParams?.borderColor};
+
     svg {
       transform: scale(1.05);
     }

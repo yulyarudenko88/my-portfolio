@@ -91,7 +91,7 @@ li {
 }
 
 .project-links {
-  fill: var(--secondary-text-color);
+  /* fill: var(--secondary-text-color); */
   width: 25px;
   height: 25px;
 }

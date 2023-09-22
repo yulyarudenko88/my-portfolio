@@ -5,11 +5,27 @@ import PropTypes from 'prop-types';
 
 import { LinksList, LinkItem } from './ProjectLinks.styled';
 
-const ProjectLinks = ({ sitePath, githubPage, position }) => {
+const ProjectLinks = ({
+  sitePath,
+  githubPage,
+  position,
+  fill = 'rgb(97, 97, 97)',
+  bgColor = 'rgba(245, 245, 245, 0.8)',
+  hoverFocusParams = {
+    bgColor: 'rgba(245, 245, 245, 0.8)',
+    borderColor: 'rgb(97, 97, 97)',
+  },
+
+}) => {
   return (
     <IconContext.Provider value={{ className: 'project-links' }}>
       <LinksList position={position}>
-        <LinkItem key={githubPage}>
+        <LinkItem
+          key={githubPage}
+          bgColor={bgColor}
+          fill={fill}
+          hoverFocusParams={hoverFocusParams}
+        >
           <a
             href={githubPage}
             target="_blank"
@@ -19,7 +35,9 @@ const ProjectLinks = ({ sitePath, githubPage, position }) => {
             <ImGithub />
           </a>
         </LinkItem>
-        <LinkItem key={sitePath}>
+        <LinkItem key={sitePath} bgColor={bgColor}
+          fill={fill}
+          hoverFocusParams={hoverFocusParams}>
           <a
             href={sitePath}
             target="_blank"
@@ -38,6 +56,12 @@ ProjectLinks.propTypes = {
   sitePath: PropTypes.string.isRequired,
   githubPage: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
+  bgColor: PropTypes.string,
+  fill: PropTypes.string,
+  hoverFocusParams: PropTypes.shape({
+    bgColor: PropTypes.string,
+    borderColor: PropTypes.string,
+  }),
 };
 
 export default ProjectLinks;
