@@ -17,8 +17,8 @@ import PROJECT from '../../data/project';
 const ProjectDetails = () => {
   const { projectId } = useParams();
   const location = useLocation();
-  const backLinkHref = location.state?.pathname ?? '/portfolio';
-
+  const backLinkHref = location.state ?? '/portfolio';
+  // console.log(location);
   const {
     title,
     // poster,

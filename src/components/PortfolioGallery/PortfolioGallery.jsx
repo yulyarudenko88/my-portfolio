@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import PortfolioGalleryCard from '../PortfolioGalleryCard/PortfolioGalleryCard';
 import { Gallery } from './PortfolioGallery.styled';
 
-const PortfolioGallery = ({ projects, selectedFilter }) => {
+const PortfolioGallery = ({ projects, filterOption }) => {
   const filteredProjects =
-    selectedFilter === 'All'
+  filterOption === 'All'
       ? projects
-      : projects.filter(project => project.options.includes(selectedFilter));
+      : projects.filter(project => project.options.includes(filterOption));
 
   return (
     <Gallery>
@@ -40,7 +40,7 @@ const PortfolioGallery = ({ projects, selectedFilter }) => {
 
 PortfolioGallery.propTypes = {
   projects: PropTypes.array,
-  selectedFilter: PropTypes.string,
+  filterOption: PropTypes.string,
 };
 
 export default PortfolioGallery;
