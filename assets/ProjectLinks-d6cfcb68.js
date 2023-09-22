@@ -1,4 +1,4 @@
-import{G as a,n as i,P as n,j as r,I as l,b as c}from"./index-bcd838bc.js";function d(t){return a({tag:"svg",attr:{viewBox:"0 0 24 24"},child:[{tag:"path",attr:{fill:"none",d:"M0 0h24v24H0z"}},{tag:"path",attr:{d:"M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"}}]})(t)}const p=`
+import{G as a,n as i,P as n,j as r,I as l,b as c}from"./index-35e8344d.js";function d(t){return a({tag:"svg",attr:{viewBox:"0 0 24 24"},child:[{tag:"path",attr:{fill:"none",d:"M0 0h24v24H0z"}},{tag:"path",attr:{d:"M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"}}]})(t)}const p=`
   display: flex;
   gap: 16px;
 `,x=`
@@ -14,7 +14,7 @@ import{G as a,n as i,P as n,j as r,I as l,b as c}from"./index-bcd838bc.js";funct
   border: 1px solid transparent;
   border-radius: 50%;
   z-index: 5;
-  background-color: rgb(245, 245, 245, 0.8);
+  background-color: rgba(245, 245, 245, 0.8);
   transition: border-color var(--transition-duration) var(--timing-function);
   svg {
     transition: transform var(--transition-duration) var(--timing-function);
