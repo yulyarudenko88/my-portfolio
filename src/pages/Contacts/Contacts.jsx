@@ -11,7 +11,7 @@ const Contacts = () => {
         <Title>Contact Me</Title>
         <Description>
           For general or work send me message at social media in the bottom of
-          website or via form next to.
+          website or via form below.
         </Description>
         <ContactForm />
       </Wrapper>

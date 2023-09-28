@@ -3,10 +3,10 @@ import PhoneImg from '../../assets/images/phone.svg';
 
 export const Wrapper = styled.div`
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto;  
   padding-left: 100px;
-  /* background-position: center; */
+  padding-top: 50px;
+  padding-bottom: 50px;
   background-repeat: no-repeat;
-  /* background-size: cover; */
   background-image: url(${PhoneImg});
 `;
