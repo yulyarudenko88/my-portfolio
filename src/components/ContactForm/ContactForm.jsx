@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import { validationSchema } from '../../helpers/validationSchema';
+import { showMessageToast } from '../Toast/showToast';
 import {
   Form,
   InputWrap,
@@ -31,9 +32,11 @@ const ContactForm = () => {
     onSubmit: async values => {
       try {
         console.log(values);
+        showMessageToast('You have sent me a message! Thanks!');
         resetForm();
       } catch (error) {
         console.error(error);
+        // showErrorToast('Oops... Something went wrong');
       }
     },
   });

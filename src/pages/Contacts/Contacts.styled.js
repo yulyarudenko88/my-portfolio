@@ -8,5 +8,6 @@ export const Wrapper = styled.div`
   padding-top: 50px;
   padding-bottom: 50px;
   background-repeat: no-repeat;
+  background-size: 300px 400px;
   background-image: url(${PhoneImg});
 `;
